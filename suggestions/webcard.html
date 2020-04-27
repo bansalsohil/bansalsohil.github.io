@@ -1,0 +1,153 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Hotjar Tracking Code for Prototypes -->
+	<script>
+		(function (h, o, t, j, a, r) {
+			h.hj =
+				h.hj ||
+				function () {
+					(h.hj.q = h.hj.q || []).push(arguments);
+				};
+			h._hjSettings = { hjid: 1752575, hjsv: 6 };
+			a = o.getElementsByTagName("head")[0];
+			r = o.createElement("script");
+			r.async = 1;
+			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+		</script>
+		<script>
+			const registerCleverTap = () => {
+				const CleverTap = {
+					initialize(accountId) {
+						window.clevertap = {
+							event: [],
+							profile: [],
+							account: [],
+							onUserLogin: [],
+							notifications: []
+						};
+						window.clevertap.account.push({
+							id: accountId
+						});
+						(function () {
+							let wzrk = document.createElement("script");
+							wzrk.type = "text/javascript";
+							wzrk.async = true;
+							wzrk.src =
+									("https:" == document.location.protocol ?
+											"https://d2r1yp2w7bby2u.cloudfront.net" :
+											"http://static.clevertap.com") + "/js/a.js";
+							let s = document.getElementsByTagName("script")[0];
+							s.parentNode.insertBefore(wzrk, s);
+						})();
+					},
+
+					sendEvent(name, payload) {
+						name = name;
+						payload = payload || {};
+						payload = {
+							...payload,
+						};
+
+						if (true) {
+							if (window.clevertap) {
+								window.clevertap.event.push(name, payload);
+							}
+						} else {
+							console.log(
+								"TRACKING EVENT NAME: ",
+								name,
+								"TRACKING EVENT PAYLOAD: ",
+								payload
+							);
+						}
+					},
+
+					logout() {
+							if (window.clevertap && window.clevertap.logout) {
+								window.clevertap.logout();
+							}
+					}
+				};
+
+				//cleverTap initialise
+				CleverTap.initialize("RZ5-R97-975Z");
+
+				return CleverTap;
+			}
+
+			const DEFAULT_TOKEN =
+			"PnZsF1v6xZx91gFaCvqmB33dC1XSNYBRFz9JvEWRhFM88EhZKEvA5/YvsTywK0tQMrsaP402HqL3qQmfC235X2QxozFfmhWTbyQW1eincL2C9Bxry/yg1E/8j3E5st5Qt6N6QA8PU29v8AbxmUV+zaK28il0hZ8H6KZWtCoVVWY6dG2LtxH/C8uNOdyWueF112djOFh6Cgi46SxYTGExq5od+3qpUr8G3DXTW9DfRRB1vb3mAOTDpcbIyK1NycNXXehOaflxWWZEHzUSPQvTCuDcgAHipPAFxFIs9n8yhX38cet3wa8qwwrZzr6ifBzWoKyBjOD0NDzTx2pYo8+2/g==";
+
+			const handleToken = function(token) { return token.replace(new RegExp("\n", "g"), "\\n"); }
+
+			const getAuthorization = function() {
+				let Authorization;
+				try {
+					Authorization = handleToken(Android.get("userInfo"));
+				} catch (e) {
+					Authorization = handleToken(DEFAULT_TOKEN);
+				}
+				return Authorization;
+			};
+
+			const CleverTap = registerCleverTap();
+			const Authorization = getAuthorization();
+			const clickEvent = function(e) {
+				CleverTap.sendEvent("UXTagSuggestionTest", {
+					action :e.target.id,
+					userId : Authorization,
+				});
+			}
+			document.addEventListener('DOMContentLoaded', (event) => {
+				const arr = ['header', 'one', 'two', 'three', 'four', 'see_more'];
+				for (let index = 0; index < arr.length; index++) {
+					const ele = arr[index];
+					document.getElementById(ele).addEventListener('click', clickEvent);
+				}
+			});
+		</script>
+    
+    <style>
+		body {
+			margin: 0;
+			overflow-x: hidden;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+        .subheader {
+			width: 100%;
+			margin-top: 24px;
+		}
+
+		.horizontal {
+			width: 100%;
+			margin-bottom: 8px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <img srcset="header.jpg 3x" class="header" /> -->
+
+	<img srcset="subheader1.jpg 3x" class="subheader" id='header' />
+	<a href="https://b.sharechat.com/94fdtA6qw4">
+		<img srcset="category1card1.jpg 3x" class="horizontal" id='one'/>
+	</a>
+	<a href="https://b.sharechat.com/xGtO6yg2N5">
+		<img srcset="category1card2.jpg 3x" class="horizontal" id='two'/>
+	</a>
+	<a href="https://sharechat.com/tag/8r6EO" >
+		<img srcset="category1card3.jpg 3x" class="horizontal" id='three'/>
+	</a>
+	<a href="https://sharechat.com/tag/ayG73" >
+		<img srcset="category1card4.jpg 3x" class="horizontal" id='four'/>
+    </a>
+    
+    <a href="index.html" >
+		<img srcset="category1card5.jpg 3x" class="horizontal" id='see_more'/>
+	</a>
