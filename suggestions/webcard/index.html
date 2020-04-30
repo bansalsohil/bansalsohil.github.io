@@ -100,12 +100,19 @@
 					userId : Authorization,
 				});
 			}
-			document.addEventListener('DOMContentLoaded', (event) => {
+			document.addEventListener('DOMContentLoaded', function (event) {
 				const arr = ['header', 'one', 'two', 'three', 'four', 'see_more'];
 				for (let index = 0; index < arr.length; index++) {
 					const ele = arr[index];
 					document.getElementById(ele).addEventListener('click', clickEvent);
 				}
+				document.getElementById('redirect').addEventListener('click', function (event) {
+					const payload = {
+						webUrl :'https://bansalsohil.github.io/suggestions',
+						type : 'launch_custom_chrome_tabs'
+					};
+					Android.onAction(JSON.stringify(payload));
+				});
 			});
 		</script>
     
@@ -148,6 +155,6 @@
 		<img srcset="../category1card4.jpg 3x" class="horizontal" id='four'/>
     </a>
     
-    <a href="../?utm=sharechat_webcard" target="_blank">
+    <a href="https://bansalsohil.github.io/suggestions/" id='redirect' >
 		<img srcset="../category1card5.jpg 3x" class="horizontal" id='see_more'/>
 	</a>
