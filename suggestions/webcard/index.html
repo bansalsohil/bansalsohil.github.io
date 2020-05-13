@@ -15,108 +15,108 @@
 			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
 			a.appendChild(r);
 		})(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-		</script>
-		<script>
-			const registerCleverTap = () => {
-				const CleverTap = {
-					initialize(accountId) {
-						window.clevertap = {
-							event: [],
-							profile: [],
-							account: [],
-							onUserLogin: [],
-							notifications: []
-						};
-						window.clevertap.account.push({
-							id: accountId
-						});
-						(function () {
-							let wzrk = document.createElement("script");
-							wzrk.type = "text/javascript";
-							wzrk.async = true;
-							wzrk.src =
-									("https:" == document.location.protocol ?
-											"https://d2r1yp2w7bby2u.cloudfront.net" :
-											"http://static.clevertap.com") + "/js/a.js";
-							let s = document.getElementsByTagName("script")[0];
-							s.parentNode.insertBefore(wzrk, s);
-						})();
-					},
+	</script>
+	<script>
+		const registerCleverTap = () => {
+			const CleverTap = {
+				initialize(accountId) {
+					window.clevertap = {
+						event: [],
+						profile: [],
+						account: [],
+						onUserLogin: [],
+						notifications: []
+					};
+					window.clevertap.account.push({
+						id: accountId
+					});
+					(function () {
+						let wzrk = document.createElement("script");
+						wzrk.type = "text/javascript";
+						wzrk.async = true;
+						wzrk.src =
+							("https:" == document.location.protocol ?
+								"https://d2r1yp2w7bby2u.cloudfront.net" :
+								"http://static.clevertap.com") + "/js/a.js";
+						let s = document.getElementsByTagName("script")[0];
+						s.parentNode.insertBefore(wzrk, s);
+					})();
+				},
 
-					sendEvent(name, payload) {
-						name = name;
-						payload = payload || {};
-						payload = {
-							...payload,
-						};
+				sendEvent(name, payload) {
+					name = name;
+					payload = payload || {};
+					payload = {
+						...payload,
+					};
 
-						if (true) {
-							if (window.clevertap) {
-								window.clevertap.event.push(name, payload);
-							}
-						} else {
-							console.log(
-								"TRACKING EVENT NAME: ",
-								name,
-								"TRACKING EVENT PAYLOAD: ",
-								payload
-							);
+					if (true) {
+						if (window.clevertap) {
+							window.clevertap.event.push(name, payload);
 						}
-					},
-
-					logout() {
-							if (window.clevertap && window.clevertap.logout) {
-								window.clevertap.logout();
-							}
+					} else {
+						console.log(
+							"TRACKING EVENT NAME: ",
+							name,
+							"TRACKING EVENT PAYLOAD: ",
+							payload
+						);
 					}
-				};
+				},
 
-				//cleverTap initialise
-				CleverTap.initialize("RZ5-R97-975Z");
-
-				return CleverTap;
-			}
-
-			const DEFAULT_TOKEN =
-			"PnZsF1v6xZx91gFaCvqmB33dC1XSNYBRFz9JvEWRhFM88EhZKEvA5/YvsTywK0tQMrsaP402HqL3qQmfC235X2QxozFfmhWTbyQW1eincL2C9Bxry/yg1E/8j3E5st5Qt6N6QA8PU29v8AbxmUV+zaK28il0hZ8H6KZWtCoVVWY6dG2LtxH/C8uNOdyWueF112djOFh6Cgi46SxYTGExq5od+3qpUr8G3DXTW9DfRRB1vb3mAOTDpcbIyK1NycNXXehOaflxWWZEHzUSPQvTCuDcgAHipPAFxFIs9n8yhX38cet3wa8qwwrZzr6ifBzWoKyBjOD0NDzTx2pYo8+2/g==";
-
-			const handleToken = function(token) { return token.replace(new RegExp("\n", "g"), "\\n"); }
-
-			const getAuthorization = function() {
-				let Authorization;
-				try {
-					Authorization = handleToken(Android.get("userInfo"));
-				} catch (e) {
-					Authorization = handleToken(DEFAULT_TOKEN);
+				logout() {
+					if (window.clevertap && window.clevertap.logout) {
+						window.clevertap.logout();
+					}
 				}
-				return Authorization;
 			};
 
-			const CleverTap = registerCleverTap();
-			const Authorization = getAuthorization();
-			const clickEvent = function(e) {
-				CleverTap.sendEvent("UXTagSuggestionTest", {
-					action :e.target.id,
-					userId : Authorization,
-				});
+			//cleverTap initialise
+			CleverTap.initialize("RZ5-R97-975Z");
+
+			return CleverTap;
+		}
+
+		const DEFAULT_TOKEN =
+			"PnZsF1v6xZx91gFaCvqmB33dC1XSNYBRFz9JvEWRhFM88EhZKEvA5/YvsTywK0tQMrsaP402HqL3qQmfC235X2QxozFfmhWTbyQW1eincL2C9Bxry/yg1E/8j3E5st5Qt6N6QA8PU29v8AbxmUV+zaK28il0hZ8H6KZWtCoVVWY6dG2LtxH/C8uNOdyWueF112djOFh6Cgi46SxYTGExq5od+3qpUr8G3DXTW9DfRRB1vb3mAOTDpcbIyK1NycNXXehOaflxWWZEHzUSPQvTCuDcgAHipPAFxFIs9n8yhX38cet3wa8qwwrZzr6ifBzWoKyBjOD0NDzTx2pYo8+2/g==";
+
+		const handleToken = function (token) { return token.replace(new RegExp("\n", "g"), "\\n"); }
+
+		const getAuthorization = function () {
+			let Authorization;
+			try {
+				Authorization = handleToken(Android.get("userInfo"));
+			} catch (e) {
+				Authorization = handleToken(DEFAULT_TOKEN);
 			}
-			document.addEventListener('DOMContentLoaded', function (event) {
-				const arr = ['header', 'one', 'two', 'three', 'four', 'see_more'];
-				for (let index = 0; index < arr.length; index++) {
-					const ele = arr[index];
-					document.getElementById(ele).addEventListener('click', clickEvent);
-				}
-				document.getElementById('redirect').addEventListener('click', function (event) {
-					const payload = {
-						webUrl :'https://bansalsohil.github.io/suggestions',
-						type : 'launch_custom_chrome_tabs'
-					};
-					Android.onAction(JSON.stringify(payload));
-				});
+			return Authorization;
+		};
+
+		const CleverTap = registerCleverTap();
+		const Authorization = getAuthorization();
+		const clickEvent = function (e) {
+			CleverTap.sendEvent("UXTagSuggestionTest", {
+				action: e.target.id,
+				userId: Authorization,
 			});
-		</script>
-    
-    <style>
+		}
+		document.addEventListener('DOMContentLoaded', function (event) {
+			const arr = ['header', 'one', 'two', 'three', 'four', 'see_more'];
+			for (let index = 0; index < arr.length; index++) {
+				const ele = arr[index];
+				document.getElementById(ele).addEventListener('click', clickEvent);
+			}
+			document.getElementById('redirect').addEventListener('click', function (event) {
+				const payload = {
+					webUrl: 'https://bansalsohil.github.io/suggestions',
+					type: 'launch_custom_chrome_tabs'
+				};
+				Android.onAction(JSON.stringify(payload));
+			});
+		});
+	</script>
+
+	<style>
 		body {
 			margin: 0;
 			overflow-x: hidden;
@@ -126,7 +126,7 @@
 			text-decoration: none;
 		}
 
-        .subheader {
+		.subheader {
 			width: 100%;
 			margin-top: 24px;
 		}
@@ -143,18 +143,19 @@
 
 	<img srcset="../subheader1.jpg 3x" class="subheader" id='header' />
 	<a href="https://b.sharechat.com/94fdtA6qw4">
-		<img srcset="../category1card1.jpg 3x" class="horizontal" id='one'/>
+		<img srcset="../category1card1.jpg 3x" class="horizontal" id='one' />
 	</a>
 	<a href="https://b.sharechat.com/xGtO6yg2N5">
-		<img srcset="../category1card2.jpg 3x" class="horizontal" id='two'/>
+		<img srcset="../category1card2.jpg 3x" class="horizontal" id='two' />
 	</a>
-	<a href="https://sharechat.com/tag/8r6EO" >
-		<img srcset="../category1card3.jpg 3x" class="horizontal" id='three'/>
+	<a href="https://sharechat.com/tag/8r6EO">
+		<img srcset="../category1card3.jpg 3x" class="horizontal" id='three' />
 	</a>
-	<a href="https://sharechat.com/tag/ayG73" >
-		<img srcset="../category1card4.jpg 3x" class="horizontal" id='four'/>
-    </a>
-    
-    <a href="https://bansalsohil.github.io/suggestions/" id='redirect' >
-		<img srcset="../category1card5.jpg 3x" class="horizontal" id='see_more'/>
+	<a href="https://sharechat.com/tag/ayG73">
+		<img srcset="../category1card4.jpg 3x" class="horizontal" id='four' />
 	</a>
+
+	<a href="https://bansalsohil.github.io/suggestions/" id='redirect'>
+		<img srcset="../category1card5.jpg 3x" class="horizontal" id='see_more' />
+	</a>
+</body>
