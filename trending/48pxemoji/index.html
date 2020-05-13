@@ -16,22 +16,6 @@
 			a.appendChild(r);
 		})(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
 	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function (event) {
-			const arr = ['one', 'two', 'three', 'four', 'five', 'six'];
-			for (let index = 0; index < arr.length; index++) {
-				const ele = arr[index];
-				document.getElementById(ele).addEventListener('click', clickEvent);
-			}
-			document.getElementById('redirect').addEventListener('click', function (event) {
-				const payload = {
-					webUrl: 'https://bansalsohil.github.io/suggestions',
-					type: 'launch_custom_chrome_tabs'
-				};
-				Android.onAction(JSON.stringify(payload));
-			});
-		});
-	</script>
 	<style>
 		body {
 			margin: 0;
@@ -58,21 +42,21 @@
 
 <body>
 	<div class="type">
-		<img srcset="../trending.png 3x" class="horizontal" id="one" />
-		<a href="https://b.sharechat.com/YkkL8S6VW4">
-			<img srcset="card1.png 3x" class="horizontal" id="two" />
+		<img srcset="../trending.png 3x" class="horizontal" />
+		<a href="https://sharechat.com/tag/5anPZA">
+			<img srcset="card1.png 3x" class="horizontal" />
 		</a>
 		<a href="https://sharechat.com/tag/JZWP0">
-			<img srcset="card2.png 3x" class="horizontal" id="three" />
+			<img srcset="card2.png 3x" class="horizontal" />
 		</a>
-		<a href="https://b.sharechat.com/uXYXkDToj6">
-			<img srcset="card3.png 3x" class="horizontal" id="four" />
+		<a href="https://sharechat.com/tag/5aGgZp">
+			<img srcset="card3.png 3x" class="horizontal" />
 		</a>
-		<a href="https://b.sharechat.com/t2ytFXQ5I5">
-			<img srcset="card4.png 3x" class="horizontal" id="five" />
+		<a href="https://sharechat.com/tag/7dqOZn">
+			<img srcset="card4.png 3x" class="horizontal" />
 		</a>
-		<a href="https://b.sharechat.com/nC64zhOgG2">
-			<img srcset="card5.png 3x" class="horizontal" id="six" />
+		<a href="https://sharechat.com/explore">
+			<img srcset="card5.png 3x" class="horizontal" />
 		</a>
 	</div>
 </body>
