@@ -38,16 +38,24 @@
 			padding-right: 13px;
 		}
 	</style>
+	<script>
+		function webview() {
+			Android.onAction(JSON.stringify({
+				action: "open_activity",
+				type: "tag",
+				referrer: "webPost",
+				tagId: "4228411",
+			}));
+		}
+	</script>
 </head>
 
 <body>
 	<div class="type">
 		<img srcset="../trending.png 3x" class="horizontal" />
-		<a href="https://sharechat.com/tag/5anPZA">
-			<img srcset="card1.png 3x" class="horizontal" />
-		</a>
+		<img srcset="card1.png 3x" class="horizontal" onclick="webview()" />
 		<a href="https://sharechat.com/tag/JZWP0">
-			<img srcset="card2.png 3x" class="horizontal" />
+			<img srcset="card2.png 3x" class="horizontal" onclick="explore()" />
 		</a>
 		<a href="https://sharechat.com/tag/5aGgZp">
 			<img srcset="card3.png 3x" class="horizontal" />
