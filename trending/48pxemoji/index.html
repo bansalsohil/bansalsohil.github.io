@@ -47,13 +47,23 @@
 				tagId: "4228411",
 			}));
 		}
+		function explore() {
+			Android.onAction(JSON.stringify({
+				action: "open_fragment",
+				type: "home",
+				referrer: "webPost",
+				position: 2
+			}));
+		}
 	</script>
 </head>
 
 <body>
 	<div class="type">
 		<img srcset="../trending.png 3x" class="horizontal" />
-		<img srcset="card1.png 3x" class="horizontal" onclick="webview()" />
+		<a href="https://sharechat.com/tag/5anPZA">
+			<img srcset="card1.png 3x" class="horizontal" onclick="webview()" />
+		</a>
 		<a href="https://sharechat.com/tag/JZWP0">
 			<img srcset="card2.png 3x" class="horizontal" onclick="explore()" />
 		</a>
@@ -63,8 +73,6 @@
 		<a href="https://sharechat.com/tag/7dqOZn">
 			<img srcset="card4.png 3x" class="horizontal" />
 		</a>
-		<a href="https://sharechat.com/explore">
-			<img srcset="card5.png 3x" class="horizontal" />
-		</a>
+		<img srcset="card5.png 3x" class="horizontal" onclick="explore()" />
 	</div>
 </body>
