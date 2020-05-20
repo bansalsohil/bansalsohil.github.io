@@ -31,3 +31,11 @@
     display: flex;
     
 }
+
+body{
+    margin: 0;
+}
+
+img{
+    width: 100%;
+}

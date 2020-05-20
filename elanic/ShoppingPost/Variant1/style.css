@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 .feed{
     display: flex;
     flex-direction: column;
@@ -30,4 +34,8 @@
 .action{
     display: flex;
     
+}
+
+img{
+    width: 100%;
 }
