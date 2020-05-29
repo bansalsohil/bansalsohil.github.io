@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Popular Chatrooms</title>
+		<style>
+			img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="subheader.png" alt="" />
+		<img src="list_chatroom_01.png" alt="" onclick="chatroom01()" />
+		<img src="list_chatroom_02.png" alt="" onclick="chatroom02()" />
+		<img src="list_chatroom_04.png" alt="" onclick="chatroom04()" />
+		<img src="see_more.png" alt="" onclick="listView()" />
+	</body>
+	<script>
+		function chatroom01() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag_chat",
+					referrer: "webPost",
+					tagId: "3c0c2a8a-9367-4f30-b354-733ff77ec017",
+				})
+			);
+		}
+		function chatroom02() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag_chat",
+					referrer: "webPost",
+					tagId: "144ae061-9985-413f-b9de-420749ee04b5",
+				})
+			);
+		}
+		function chatroom04() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag_chat",
+					referrer: "webPost",
+					tagId: "02ea5b21-d1e4-4b2e-973c-268671938811",
+				})
+			);
+		}
+		function listView() {
+			Android.onAction(
+				JSON.stringify({
+					type: "web_post",
+					referrer: "webPost",
+					postId: 0,
+					webUrl: "https://bansalsohil.com/chatroom/list/",
+				})
+			);
+		}
+	</script>
+</html>
