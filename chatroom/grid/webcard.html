@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Popular Chatrooms</title>
+		<style>
+			body {
+				margin: 0;
+			}
+			.subheader {
+				width: 100%;
+			}
+			.grid {
+				display: flex;
+				padding: 0 5%;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			.grid img {
+				width: 48%;
+				height: 100%;
+				margin-bottom: 2%;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../list/subheader.png" alt="" class="subheader" />
+		<div class="grid">
+			<img src="./grid_chatroom_02.jpg" alt="" onclick="chatroom02()" />
+			<img src="./grid_chatroom_03.jpg" alt="" onclick="chatroom03()" />
+			<img src="./grid_chatroom_04.jpg" alt="" onclick="chatroom04()" />
+			<img src="./seemore.png" alt="" onclick="gridView()" />
+		</div>
+	</body>
+	<script>
+		function chatroom02() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag_chat",
+					referrer: "webPost",
+					tagId: "3c0c2a8a-9367-4f30-b354-733ff77ec017",
+				})
+			);
+		}
+		function chatroom03() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag_chat",
+					referrer: "webPost",
+					tagId: "a78b9770-644d-430b-960e-cd8a181a56d1",
+				})
+			);
+		}
+		function chatroom04() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag_chat",
+					referrer: "webPost",
+					tagId: "bb4a4380-5424-4ff9-b06d-292b501e4f6e",
+				})
+			);
+		}
+		function gridView() {
+			Android.onAction(
+				JSON.stringify({
+					type: "web_post",
+					referrer: "webPost",
+					postId: 0,
+					webUrl: "https://bansalsohil.github.io/chatroom/grid/",
+				})
+			);
+		}
+	</script>
+</html>
