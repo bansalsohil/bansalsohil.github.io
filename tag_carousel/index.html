@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="carousel.css" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			img {
+				width: 100vw;
+			}
+			.main-carousel {
+				height: 200px;
+			}
+			.carousel-cell {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="subheader.jpg" alt="" />
+		<div class="main-carousel">
+			<div class="carousel-cell">
+				<img src="slide1-01.jpg" alt="" onclick="tag1()" />
+				<img src="slide1-02.jpg" alt="" onclick="tag2()" />
+				<img src="slide1-03.jpg" alt="" onclick="tag3()" />
+			</div>
+			<div class="carousel-cell">
+				<img src="slide2-01.jpg" alt="" onclick="tag4()" />
+				<img src="slide2-02.jpg" alt="" onclick="tag5()" />
+				<img src="slide2-03.jpg" alt="" onclick="tag6()" />
+			</div>
+			<div class="carousel-cell">
+				<img src="slide3-01.jpg" alt="" onclick="tag7()" />
+				<img src="slide3-02.jpg" alt="" onclick="tag8()" />
+				<img src="slide3-03.jpg" alt="" onclick="tag9()" />
+			</div>
+			<div class="carousel-cell">
+				<img src="slide4-01.jpg" alt="" onclick="tag10()" />
+				<img src="slide4-02.jpg" alt="" onclick="tag11()" />
+				<img src="slide4-03.jpg" alt="" onclick="tag12()" />
+			</div>
+			<div class="carousel-cell">
+				<img src="slide5-01.jpg" alt="" onclick="tag13()" />
+				<img src="slide5-02.jpg" alt="" onclick="tag14()" />
+				<img src="slide5-03.jpg" alt="" onclick="tag15()" />
+			</div>
+			<div class="carousel-cell">
+				<img src="slide6-01.jpg" alt="" onclick="tag16()" />
+				<img src="slide6-02.jpg" alt="" onclick="tag17()" />
+				<img src="slide6-03.jpg" alt="" onclick="tag18()" />
+			</div>
+		</div>
+		<img src="see_more.jpg" alt="" onclick="explore()" />
+	</body>
+	<script src="carousel.min.js"></script>
+	<script>
+		var elem = document.querySelector(".main-carousel");
+		var flkty = new Flickity(elem, {
+			// options
+			cellAlign: "left",
+			contain: true,
+			prevNextButtons: false,
+			autoPlay: 2000,
+			setGallerySize: false,
+		});
+	</script>
+	<script>
+		function explore() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_fragment",
+					type: "home",
+					referrer: "webPost",
+					position: 1,
+				})
+			);
+		}
+		function tag1() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "727",
+				})
+			);
+		}
+		function tag2() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "453691",
+				})
+			);
+		}
+		function tag3() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "100748",
+				})
+			);
+		}
+		function tag4() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "945176",
+				})
+			);
+		}
+		function tag5() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "196778",
+				})
+			);
+		}
+		function tag6() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "112714",
+				})
+			);
+		}
+		function tag7() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "108848",
+				})
+			);
+		}
+		function tag8() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "100777",
+				})
+			);
+		}
+		function tag9() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "108849",
+				})
+			);
+		}
+		function tag10() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "2322863",
+				})
+			);
+		}
+		function tag11() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "117253",
+				})
+			);
+		}
+		function tag12() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "297",
+				})
+			);
+		}
+		function tag13() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "97210",
+				})
+			);
+		}
+		function tag14() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "314776",
+				})
+			);
+		}
+		function tag15() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "389462",
+				})
+			);
+		}
+		function tag16() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "3946750",
+				})
+			);
+		}
+		function tag17() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "4228411",
+				})
+			);
+		}
+		function tag18() {
+			Android.onAction(
+				JSON.stringify({
+					action: "open_activity",
+					type: "tag",
+					referrer: "webPost",
+					tagId: "4156594",
+				})
+			);
+		}
+	</script>
+</html>
